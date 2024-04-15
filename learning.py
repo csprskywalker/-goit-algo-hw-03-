@@ -1,6 +1,7 @@
 from datetime import datetime
 import random
-#comments
+
+#task 1
 def get_days_from_today(date):
     try:
         dates = datetime.strptime(date, "%Y-%m-%d")
@@ -10,6 +11,7 @@ def get_days_from_today(date):
     except ValueError:
         print("Invalid input. Corrent input option YYYY-MM-DD")
 
+#task 2
 def get_numbers_ticket(min, max, quantity):
     try:
         min, max, quantity = int(min), int(max), int(quantity)
