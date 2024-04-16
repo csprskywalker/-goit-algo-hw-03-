@@ -17,13 +17,14 @@ def get_numbers_ticket(min, max, quantity):
         min, max, quantity = int(min), int(max), int(quantity)
 
         if not 1 <= min != max <= 1000:
-            raise ValueError("Min and max must be in the range 1-1000, where min != max.")
+            return []
         if quantity < 1 or quantity > (max - min + 1):
-            raise ValueError("Quantity must be at least 1 and no more than the number of numbers in the range.")
-
+            return []
         #main
-        random_number = sorted([random.randint(min, max) for _ in range(quantity)])
-        return random_number
+        random_number = random.sample(range(min, max + 1), quantity)
+        sorted_numbers = sorted(random_number)
+
+        return sorted_numbers
 
 
     except ValueError as e:
@@ -34,5 +35,4 @@ def get_numbers_ticket(min, max, quantity):
 print(get_days_from_today("2024-4-10"))
 print(get_numbers_ticket(1, 500, 10))
 print(get_numbers_ticket(500, 500, 5))
-print(get_numbers_ticket(123, 456, 5))
-#end
+
